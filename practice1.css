@@ -1,0 +1,22 @@
+header{
+    display:flex;
+    align-items: center;
+    width: 300px;
+    justify-items: center;
+    justify-content: space-evenly;
+    background: cornflowerblue;
+}
+
+#gnb.active{
+    height: 100px;
+    border: 1px solid #ccc;
+}
+
+#gnb{
+    width: 600px;
+    height: 0px;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.5s;
+    
+}
