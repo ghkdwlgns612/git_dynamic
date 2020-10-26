@@ -76,6 +76,8 @@ sound_btn.onclick = function(){
         sound_btn.setAttribute("src","https://csslick.github.io/banner/images/sound_on.png");
         bgm[0].play();
     }
+
+    event.stopPropagation();
 }   
 
 
