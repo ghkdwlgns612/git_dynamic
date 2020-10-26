@@ -50,5 +50,44 @@ function animate_balloon(){
     }
 }
 
+function bgm_init(){
+    let bgm = new Audio();
+    bgm.src = "voice.m4a";
+    bgm.loop = true;
+    document.body.appendChild(bgm);
+
+}
+
 ball_init();
 setInterval(function(){animate_balloon();},1000/30);
+bgm_init();
+
+sound_btn.onclick = function(){
+    let attr = sound_btn.getAttribute("class");
+    let bgm = document.getElementsByTagName("audio");
+
+    if(attr=="active"){
+        sound_btn.removeAttribute("class");
+        sound_btn.setAttribute("src","https://csslick.github.io/banner/images/sound_off.png");
+        bgm[0].pause();
+    }
+    else{
+        sound_btn.setAttribute("class","active");
+        sound_btn.setAttribute("src","https://csslick.github.io/banner/images/sound_on.png");
+        bgm[0].play();
+    }
+}   
+
+
+toggle.onclick = function() {
+    var a = banner.getAttribute("class");
+    return "active" == a ? (banner.removeAttribute("class"),
+    toggle.innerHTML = "배너 열기",
+    !1) : (banner.setAttribute("class", "active"),
+    toggle.innerHTML = "배너 닫기",
+    !1)
+}
+
+banner.onclick = function() {
+    window.open("https://csslick.github.io/", "_blank")
+};
